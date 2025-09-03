@@ -23,7 +23,7 @@ const Skills = () => {
     {
       id: 4,
       title: "Cloud",
-      skills: ["GCP Associate Cloud Engineer"],
+      skills: ["AWS EC2", "GCP: Associate Cloud Engineer"],
       gradient: "from-[#00D4FF] to-blue-500"
     },
     {
