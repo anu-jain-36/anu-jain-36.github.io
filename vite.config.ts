@@ -4,6 +4,7 @@ import path from 'path'
 
 
 export default defineConfig({
+   base: 'https://anu-jain-36.github.io/',
   plugins: [
     react(), 
   ],
@@ -18,7 +19,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true
+    sourcemap: true,
+    copyPublicDir: true
   }
 })
 
