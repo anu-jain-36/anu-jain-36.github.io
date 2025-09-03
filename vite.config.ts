@@ -4,7 +4,7 @@ import path from 'path'
 
 
 export default defineConfig({
-   base: 'https://anu-jain-36.github.io/',
+   base: '/',
   plugins: [
     react(), 
   ],
