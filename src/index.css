@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(215 25% 26.3%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(215 25% 26.3%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(215 25% 26.3%);
+  --primary: hsl(217 91% 60%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(215 25% 16.1%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(220 13% 91%);
+  --muted-foreground: hsl(215 25% 26.3%);
+  --accent: hsl(188 95% 43.1%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(220 13% 91%);
+  --input: hsl(220 13% 91%);
+  --ring: hsl(217 91% 60%);
+  --chart-1: hsl(217 91% 60%);
+  --chart-2: hsl(188 95% 43.1%);
+  --chart-3: hsl(45 93% 47%);
+  --chart-4: hsl(142 76% 36%);
+  --chart-5: hsl(339 82% 52%);
+  --background-gradient: hsl(220 43% 98%);
+  --blue-50: hsl(214 100% 97%);
+  --radius: 0.5rem;
+  --font-inter: 'Inter', sans-serif;
+}
+
+.dark {
+  --background: hsl(215 25% 16.1%);
+  --foreground: hsl(0 0% 95%);
+  --card: hsl(215 25% 16.1%);
+  --card-foreground: hsl(0 0% 95%);
+  --popover: hsl(215 25% 16.1%);
+  --popover-foreground: hsl(0 0% 95%);
+  --primary: hsl(217 91% 60%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(220 13% 91%);
+  --secondary-foreground: hsl(215 25% 16.1%);
+  --muted: hsl(215 25% 20%);
+  --muted-foreground: hsl(0 0% 70%);
+  --accent: hsl(188 95% 43.1%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(215 25% 20%);
+  --input: hsl(215 25% 20%);
+  --ring: hsl(217 91% 60%);
+  --background-gradient: hsl(215 25% 18%);
+  --blue-50: hsl(215 25% 18%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-[var(--font-inter)] antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .timeline-line::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: hsl(var(--border));
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 768px) {
+    .timeline-line::before {
+      left: 20px;
+    }
+  }
+
+  .timeline-item {
+    transition: all 0.3s ease;
+  }
+
+  .timeline-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .skill-badge {
+    transition: all 0.3s ease;
+  }
+
+  .skill-badge:hover {
+    transform: scale(1.05);
+  }
+}
