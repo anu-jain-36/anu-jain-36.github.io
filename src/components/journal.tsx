@@ -7,10 +7,10 @@ const Journal = () => {
       id: 1,
       week: "Week 42",
       year: "2025",
-      title: "Building Scalable Microservices",
-      excerpt: "This week I dove deep into microservices architecture, exploring how to design scalable systems with Spring Boot and Docker. Learned about service discovery patterns and API gateway implementations...",
+      title: "System Design, React & More",
+      excerpt: "This week I am studying system design and enhancing my personal website with a Journal section. I am excited to share my learnings and progress.",
       date: "October 13, 2025",
-      tags: ["Spring Boot", "Docker", "Microservices"],
+      tags: ["System Design", "React"],
       gradient: "from-[#00D4FF] to-blue-500",
       slug: "week42-25"
     },
@@ -22,9 +22,9 @@ const Journal = () => {
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
-            Development <span className="text-[#00D4FF]">Journal</span>
+            My <span className="text-[#00D4FF]">Journal</span>
           </h2>
-          <p className="text-gray-600 text-lg">Weekly insights and learning experiences</p>
+          <p className="text-gray-600 text-lg">Weekly insights and learnings</p>
         </div>
 
         {/* Journal Grid */}

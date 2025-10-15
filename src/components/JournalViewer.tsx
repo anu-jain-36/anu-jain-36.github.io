@@ -128,12 +128,7 @@ const JournalViewer: React.FC<JournalViewerProps> = ({ filename, onBack }) => {
           </button>
         )}
         
-        <article className="bg-white rounded-lg shadow-md p-8 md:p-12">
-          <div className="flex items-center gap-2 mb-6 text-gray-500 text-sm">
-            <FileText className="w-4 h-4" />
-            <span>{filename}</span>
-          </div>
-          
+        <article className="bg-white rounded-lg shadow-md p-8 md:p-12"> 
           <div 
             className="prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: parseMarkdown(content) }}
