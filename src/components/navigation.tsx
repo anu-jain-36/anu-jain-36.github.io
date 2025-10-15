@@ -52,6 +52,13 @@ export default function Navigation() {
               >
                 Skills
               </button>
+                <button 
+                onClick={() => scrollToSection('journal')}
+                className="text-white hover:text-[#00D4FF] transition-colors font-semibold text-lg drop-shadow-sm"
+                data-testid="nav-journal"
+              >
+                Journal
+              </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-white hover:text-[#00D4FF] transition-colors font-semibold text-lg drop-shadow-sm"
@@ -59,6 +66,7 @@ export default function Navigation() {
               >
                 Contact
               </button>
+              
             </div>
           </div>
           
