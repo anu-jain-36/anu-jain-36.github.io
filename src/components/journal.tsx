@@ -14,6 +14,17 @@ const Journal = () => {
       gradient: "from-[#00D4FF] to-blue-500",
       slug: "week42-25"
     },
+     {
+      id: 2,
+      week: "Week 43",
+      year: "2025",
+      title: "Networking and Pitch Practice",
+      excerpt: "This week I am focusing on networking and refining my pitch for potential opportunities. Building connections is key to growth.",
+      date: "October 20, 2025",
+      tags: ["Networking", "Pitch"],
+      gradient: "from-[#00D4FF] to-blue-500",
+      slug: "week43-25"
+    },
   ];
   return (
     <section id='journal' className="py-20 bg-gradient-to-br from-gray-50 to-white">
@@ -66,7 +77,7 @@ const Journal = () => {
               
               {/* Read More Button */}
               <Link 
-                to="/journal/week42-25"
+                to={`/journal/${entry.slug}`}
                 className="inline-block"
               >
                 <span className="text-[#00D4FF] hover:text-blue-600 font-semibold text-sm flex items-center gap-2 transition-colors duration-200">
