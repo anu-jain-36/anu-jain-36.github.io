@@ -16,7 +16,7 @@ export default function Experience() {
   const experiences = [
     {
       id: 1,
-      title: "Data Science Capstone Project",
+      title: "Machine Learning Intern",
       organization: "Houston Education Research Consortium, Kinder Institute for Urban Research",
       year: "2024",
       points: [
