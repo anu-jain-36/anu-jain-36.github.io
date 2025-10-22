@@ -11,13 +11,13 @@ const Skills = () => {
     {
       id: 2,
       title: "Frameworks",
-      skills: ["Spring", "Spring Boot", "Ruby on Rails", "React", "Express.js"],
+      skills: ["Ruby on Rails", "React", "Express.js"],
       gradient: "from-[#00D4FF] to-blue-500"
     },
     {
       id: 3,
       title: "Databases",
-      skills: ["MySQL", "PostgreSQL", "MongoDB"],
+      skills: ["MySQL", "MongoDB"],
       gradient: "from-[#00D4FF] to-blue-500"
     },
     {
@@ -29,7 +29,7 @@ const Skills = () => {
     {
       id: 5,
       title: "DevOps",
-      skills: ["Jenkins", "Docker", "Terraform", "Git - GitHub"],
+      skills: ["Docker", "Terraform", "Git - GitHub"],
       gradient: "from-[#00D4FF] to-blue-500"
     },
     {
