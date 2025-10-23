@@ -1,16 +1,26 @@
 import { useState, useEffect } from 'react';
-import { FileText, ArrowLeft, AlertCircle } from 'lucide-react';
+import { FileText, ArrowLeft, ArrowRight, Home, AlertCircle } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import journalEntries  from './data/journalEntries';
 
 interface JournalViewerProps {
   filename: string;
   onBack?: () => void;
+  onNavigate?: (slug: string) => void;
 }
 
-const JournalViewer: React.FC<JournalViewerProps> = ({ filename, onBack }) => {
+const JournalViewer: React.FC<JournalViewerProps> = ({ filename, onBack, onNavigate }) => {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Extract slug from filename (e.g., "week42-25.md" -> "week42-25")
+  const currentSlug = filename.replace('.md', '');
+  
+  // Find current entry and navigation entries
+  const currentIndex = journalEntries.findIndex(entry => entry.slug === currentSlug);
+  const prevEntry = currentIndex > 0 ? journalEntries[currentIndex - 1] : null;
+  const nextEntry = currentIndex < journalEntries.length - 1 ? journalEntries[currentIndex + 1] : null;
 
   useEffect(() => {
     const loadMarkdown = async () => {
@@ -36,18 +46,52 @@ const JournalViewer: React.FC<JournalViewerProps> = ({ filename, onBack }) => {
     loadMarkdown();
   }, [filename]);
 
+  const handlePrevious = () => {
+    if (prevEntry && onNavigate) {
+      onNavigate(prevEntry.slug);
+    } else if (onBack) {
+      onBack();
+    }
+  };
+
+  const handleNext = () => {
+    if (nextEntry && onNavigate) {
+      onNavigate(nextEntry.slug);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        {onBack && (
+        {/* Navigation Header */}
+        <div className="flex items-center justify-between mb-6">
           <button
-            onClick={onBack}
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors"
+            onClick={handlePrevious}
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
           >
-            <ArrowLeft className="w-5 h-5" />
-            Back
+            {prevEntry ? (
+              <>
+                <ArrowLeft className="w-5 h-5" />
+                <span className="hidden sm:inline">{prevEntry.week}</span>
+              </>
+            ) : (
+              <>
+                <Home className="w-5 h-5" />
+                <span className="hidden sm:inline">Home</span>
+              </>
+            )}
           </button>
-        )}
+
+          {nextEntry && (
+            <button
+              onClick={handleNext}
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <span className="hidden sm:inline">{nextEntry.week}</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          )}
+        </div>
         
         <article className="bg-white rounded-lg shadow-md p-8 md:p-12">
           {loading && (

@@ -11,12 +11,31 @@ function JournalViewerPage() {
     return <div>No file specified</div>;
   }
 
+   const handleNavigate = (slug: string) => {
+    navigate(`/journal/${slug}`);
+  };
+
+  const handleBack = () => {
+    navigate('/');
+    setTimeout(() => {
+      const journalSection = document.getElementById('journal');
+      journalSection?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <JournalViewer 
-      filename={`${filename}.md`} 
-      onBack={() => navigate('/')} 
+       filename={`${filename}.md`} 
+      onBack={handleBack}
+      onNavigate={handleNavigate}
     />
   );
 }
 
 export default JournalViewerPage;
+
+
+
+
+
+

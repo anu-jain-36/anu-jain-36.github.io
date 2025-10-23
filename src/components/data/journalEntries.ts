@@ -14,10 +14,10 @@ const journalEntries = [
       id: 2,
       week: "Week 43",
       year: "2025",
-      title: "Networking and Pitch Practice",
-      excerpt: "This week I am focusing on networking and refining my pitch for potential opportunities. Building connections is key to growth.",
+      title: "Networking, Resume & Pitch",
+      excerpt: "This week I am focusing on networking and refining my pitch for potential opportunities. Learning LangChain and creating a feature for my website.",
       date: "October 20, 2025",
-      tags: ["Networking", "Pitch"],
+      tags: ["Networking", "Pitch","LangChain"],
       gradient: "from-[#00D4FF] to-blue-500",
       slug: "week43-25"
     },

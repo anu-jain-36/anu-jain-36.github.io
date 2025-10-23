@@ -115,6 +115,13 @@ export default function Navigation() {
               Skills
             </button>
             <button 
+              onClick={() => scrollToSection('journal')}
+              className="block w-full text-left px-3 py-2 text-white hover:text-[#00D4FF] hover:bg-white/10 rounded transition-colors text-lg font-semibold"
+              data-testid="mobile-nav-journal"
+              >
+              Journal
+            </button>
+            <button 
               onClick={() => scrollToSection('contact')}
               className="block w-full text-left px-3 py-2 text-white hover:text-[#00D4FF] hover:bg-white/10 rounded transition-colors text-lg font-semibold"
               data-testid="mobile-nav-contact"
