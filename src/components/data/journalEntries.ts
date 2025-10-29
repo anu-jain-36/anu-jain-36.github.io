@@ -21,6 +21,17 @@ const journalEntries = [
       gradient: "from-[#00D4FF] to-blue-500",
       slug: "week43-25"
     },
+     {
+      id: 3,
+      week: "Week 44",
+      year: "2025",
+      title: "Applications and Speech Recognition Demo",
+      excerpt: "I created an speech recognition demo with OpenAI's Whisper. I am also applying to jobs and made some non-functional updates to my personal website.",
+      date: "October 27, 2025",
+      tags: ["Applications", "speech-to-text","OpenAI Whisper"],
+      gradient: "from-[#00D4FF] to-blue-500",
+      slug: "week44-25"
+    },
   ];
 
 export default journalEntries;
